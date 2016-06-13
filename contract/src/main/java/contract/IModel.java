@@ -1,5 +1,7 @@
 package contract;
 
-public interface IModel {
+import model.Map;
 
+public interface IModel {
+	public Map getMap();
 }

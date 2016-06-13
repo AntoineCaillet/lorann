@@ -8,7 +8,7 @@ public class Map {
 	
 	public Map(){
 		entities = new ArrayList<Entite>();
-		elements = new Element[15][15];
+		elements = new Element[30][30];
 	}
 	
 	public void setElement(int x, int y, Element element){

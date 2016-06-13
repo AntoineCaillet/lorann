@@ -4,11 +4,26 @@ import java.awt.Image;
 
 public class Element {
 	private Image image;
+	private int x, y;
 	
-	void setImage(Image image){
+	public Element(Image image, int x, int y){
+		this.image = image;
+		this.x = x;
+		this.y = y;
+	}
+	
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setImage(Image image){
 		this.image = image;
 	}
-	Image getImage(){
+	public Image getImage(){
 		return image;
 	}
 }

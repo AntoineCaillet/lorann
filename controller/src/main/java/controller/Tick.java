@@ -1,25 +1,24 @@
 package controller;
 
-import contract.*;
 
 public class Tick implements Runnable{
-	private IView view;
-	private IModel model;
+	private Controller controller;
 	
-	public Tick(IView view, IModel model){
-		this.view = view;
-		this.model = model;
+	
+	public Tick(Controller controller){
+		this.controller = controller;
 	}
 	
-	public void setView(IView v){
-		view = v;
+	public void run() 
+	{
+		while(true)
+		{
+			try
+			{
+				Thread.sleep(1000);
+				controller.update();
+			}catch(Exception e){}
+		}
 	}
-	public void setModel(IModel m){
-		model = m;
-	}
-
-	public void run() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }

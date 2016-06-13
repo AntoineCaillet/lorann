@@ -24,4 +24,27 @@ public class BDD {
 		}
 		return null;
 	}
+	
+	public ResultSet query(String sql, int id){
+		try{
+			CallableStatement call = bddConnection.getConnection().prepareCall(sql);
+			call.setInt(1, id);
+			call.execute();
+			return call.getResultSet();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public ResultSet query(String sql){
+		try{
+			CallableStatement call = bddConnection.getConnection().prepareCall(sql);
+			call.execute();
+			return call.getResultSet();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
